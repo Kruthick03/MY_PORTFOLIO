@@ -89,7 +89,7 @@ const About = () => {
                 <p className="font-medium text-slate-700 text-zinc-900 dark:text-slate-350">Computer Science and Engineering</p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">Karpagam Institute of Technology, Coimbatore</p>
                 <div className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-                  CGPA: 7.9
+                  CGPA: 7.9/10
                 </div>
               </div>
             </div>

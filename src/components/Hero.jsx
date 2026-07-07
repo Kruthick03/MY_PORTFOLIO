@@ -1,40 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, FileText, Mail, Cpu } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
-  const titles = ["Full Stack Developer", "AI Product Builder", "Java & Spring Boot Developer"];
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState("");
+  const titles = [
+    "Full Stack Developer",
+    "AI Product Builder",
+    "Java & Spring Boot Developer",
+    "Backend Developer"
+  ];
+  const [index, setIndex] = useState(0);
 
-  // Clean, high-performance typewriter effect
+  // Smooth cross-fade interval trigger
   useEffect(() => {
-    const currentTitle = titles[titleIndex];
-    let timer;
-    
-    if (isDeleting) {
-      timer = setTimeout(() => {
-        setText(currentTitle.substring(0, charIndex - 1));
-        setCharIndex(prev => prev - 1);
-      }, 25);
-    } else {
-      timer = setTimeout(() => {
-        setText(currentTitle.substring(0, charIndex + 1));
-        setCharIndex(prev => prev + 1);
-      }, 70);
-    }
-
-    if (!isDeleting && charIndex === currentTitle.length) {
-      timer = setTimeout(() => setIsDeleting(true), 1600);
-    } else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setTitleIndex(prev => (prev + 1) % titles.length);
-    }
-
-    return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, titleIndex]);
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % titles.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -64,8 +47,8 @@ const Hero = () => {
       
       {/* Background Gradients & low opacity Grid Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[5%] w-[450px] h-[450px] rounded-full bg-blue-500/5 blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[5%] w-[450px] h-[450px] rounded-full bg-purple-500/5 blur-[120px]" />
+        <div className="absolute top-[-10%] left-[5%] w-[450px] h-[450px] rounded-full bg-[#2563EB]/5 blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[5%] w-[450px] h-[450px] rounded-full bg-[#7C3AED]/5 blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -81,25 +64,39 @@ const Hero = () => {
             {/* Title / Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] font-display text-slate-800 dark:text-white">
               Building Intelligent Software <br />
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">for Real-World Problems</span>
+              <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">for Real-World Problems.</span>
             </h1>
 
-            {/* Name and Typing Animation */}
+            {/* Name and Fading Title Rotation */}
             <div className="space-y-1">
               <h2 className="text-2xl font-bold text-slate-800 dark:text-white font-sora tracking-tight">
                 Kruthick M
               </h2>
-              <div className="text-base sm:text-lg md:text-xl font-medium text-blue-500 dark:text-blue-400 font-sora flex items-center justify-center lg:justify-start h-8">
-                <span>{text}</span>
-                <span className="w-0.5 h-5 bg-blue-500 dark:bg-blue-400 ml-1.5 animate-pulse" />
+              <div className="text-base sm:text-lg md:text-xl font-medium text-blue-600 dark:text-blue-450 font-sora flex items-center justify-center lg:justify-start h-8 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="inline-block"
+                  >
+                    {titles[index]}
+                  </motion.span>
+                </AnimatePresence>
               </div>
             </div>
 
             {/* Concise Description */}
-            <p className="text-sm sm:text-base text-slate-500 dark:text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light space-y-2">
-              Final Year Computer Science and Engineering student passionate about building scalable backend systems, modern web applications, and AI-powered products using Java, Spring Boot, React, and PostgreSQL. <br />
-              <span className="block mt-2 font-medium text-slate-600 dark:text-slate-300">Currently learning AI Product Development, LLMs, and Intelligent Software Systems.</span>
-            </p>
+            <div className="text-sm sm:text-base text-slate-500 dark:text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light space-y-2">
+              <p>
+                I build scalable backend systems, modern web applications and AI-powered software using Java, Spring Boot, React and PostgreSQL.
+              </p>
+              <p className="mt-2 font-medium text-slate-600 dark:text-slate-350">
+                Currently learning AI Agents, Large Language Models and Intelligent Software Systems.
+              </p>
+            </div>
           </motion.div>
 
           {/* Action buttons */}
@@ -112,7 +109,7 @@ const Hero = () => {
             {/* Primary */}
             <button
               onClick={() => handleScroll('projects')}
-              className="group flex items-center space-x-2 w-full sm:w-auto justify-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md shadow-blue-500/10 hover:shadow-lg active:scale-98 transition-all duration-250"
+              className="group flex items-center space-x-2 w-full sm:w-auto justify-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:brightness-110 shadow-md shadow-blue-500/10 hover:shadow-lg active:scale-98 transition-all duration-250"
             >
               <span>Explore Projects</span>
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -148,8 +145,8 @@ const Hero = () => {
           >
             {/* Subtle background gradient blur */}
             <div className="absolute inset-0 z-0 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/5 dark:bg-blue-500/3 rounded-full blur-3xl" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/5 dark:bg-purple-500/3 rounded-full blur-3xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/5 dark:bg-blue-550/3 rounded-full blur-3xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/5 dark:bg-purple-550/3 rounded-full blur-3xl" />
             </div>
 
             {/* Profile Photo Floating Wrapper */}
@@ -157,9 +154,9 @@ const Hero = () => {
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ scale: 1.03 }}
-              className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 rounded-full p-[1.5px] bg-gradient-to-tr from-blue-500/60 to-purple-500/60 shadow-lg shadow-black/10 dark:shadow-black/30 transition-all duration-300"
+              className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 rounded-full p-[1.5px] bg-gradient-to-tr from-[#2563EB]/60 to-[#7C3AED]/60 shadow-lg shadow-black/10 dark:shadow-black/30 transition-all duration-300"
             >
-              <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 relative flex items-center justify-center">
+              <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 relative flex items-center justify-center border border-white/10">
                 <img 
                   src="/profile.jpg" 
                   alt="Kruthick M" 

@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
 // Core Components
-import LoadingScreen from './components/LoadingScreen';
 import BackgroundEffects from './components/BackgroundEffects';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -18,7 +17,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('theme');
     return saved ? saved : 'dark';
@@ -39,6 +37,14 @@ const App = () => {
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
+
+  // Reset scroll to top on refresh/load
+  useEffect(() => {
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   // Scroll spy to highlight active section and show scroll-to-top button
   useEffect(() => {
@@ -79,69 +85,59 @@ const App = () => {
   };
 
   return (
-    <>
-      {/* 1. Loading Screen */}
-      <AnimatePresence mode="wait">
-        {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="relative min-h-screen dot-grid overflow-x-hidden bg-[#f8fafc] text-slate-800 dark:bg-[#0b1120] dark:text-slate-100 transition-colors duration-300"
+    >
+      {/* 1. Interactive Aurora Mesh + Canvas Particles Background */}
+      <BackgroundEffects theme={theme} />
+
+      {/* 2. Custom Tracking Cursor */}
+      <CustomCursor />
+
+      {/* 3. Navigation */}
+      <Navbar activeSection={activeSection} theme={theme} toggleTheme={toggleTheme} />
+
+      {/* 4. Website Content Sections */}
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <About />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Skills />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Projects />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Experience />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Certifications />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Resume />
+        <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
+        <Contact />
+      </main>
+
+      {/* 5. Footer */}
+      <Footer />
+
+      {/* 6. Scroll To Top Float Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 50 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-40 p-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:brightness-110 text-white shadow-lg shadow-blue-500/20 active:scale-95 transition-all duration-200"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={18} />
+          </motion.button>
+        )}
       </AnimatePresence>
-
-      {/* Main Website Wrapper */}
-      {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative min-h-screen dot-grid overflow-x-hidden bg-[#f8fafc] text-slate-800 dark:bg-[#0b1120] dark:text-slate-100 transition-colors duration-300"
-        >
-          {/* 2. Interactive Aurora Mesh + Canvas Particles Background */}
-          <BackgroundEffects theme={theme} />
-
-          {/* 3. Custom Tracking Cursor */}
-          <CustomCursor />
-
-          {/* 4. Navigation */}
-          <Navbar activeSection={activeSection} theme={theme} toggleTheme={toggleTheme} />
-
-          {/* 5. Website Content Sections */}
-          <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Hero />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <About />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Skills />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Projects />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Experience />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Certifications />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Resume />
-            <div className="w-full h-[1px] bg-slate-200/50 dark:bg-slate-800/40 my-4" />
-            <Contact />
-          </main>
-
-          {/* 6. Footer */}
-          <Footer />
-
-          {/* 7. Scroll To Top Float Button */}
-          <AnimatePresence>
-            {showScrollTop && (
-              <motion.button
-                initial={{ opacity: 0, scale: 0.5, y: 50 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.5, y: 50 }}
-                onClick={scrollToTop}
-                className="fixed bottom-6 right-6 z-40 p-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white shadow-lg shadow-blue-500/20 active:scale-95 transition-all duration-200"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp size={18} />
-              </motion.button>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      )}
-    </>
+    </motion.div>
   );
 };
 
