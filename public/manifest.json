@@ -1,0 +1,15 @@
+{
+  "short_name": "Kruthick M",
+  "name": "Kruthick M | Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B1120",
+  "theme_color": "#2563EB",
+  "display": "standalone"
+}
