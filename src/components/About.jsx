@@ -5,24 +5,24 @@ import { CheckCircle, GraduationCap, Cpu, Code2 } from 'lucide-react';
 const About = () => {
   const profileHighlights = [
     {
-      title: "Academic Focus",
-      desc: "Final Year Computer Science & Engineering Student at Karpagam Institute of Technology.",
-      icon: <GraduationCap className="text-blue-500" size={20} />
-    },
-    {
-      title: "Core Specialties",
-      desc: "Focused on Backend Development & Full Stack Web architectures.",
+      title: "Java & REST APIs",
+      desc: "Specializing in the Java ecosystem, creating structured backend architectures and RESTful APIs using Spring Boot and Hibernate.",
       icon: <Code2 className="text-blue-500" size={20} />
     },
     {
-      title: "Emerging Tech Focus",
-      desc: "Interested in learning AI Technologies and intelligence layers.",
+      title: "Database Optimization",
+      desc: "Optimizing database schemas and designing high-performance queries across PostgreSQL, MySQL, and MongoDB.",
       icon: <Cpu className="text-purple-500" size={20} />
     },
     {
-      title: "Engineering Mindset",
-      desc: "Strong problem-solving capability with a passion for software engineering.",
-      icon: <CheckCircle className="text-purple-500" size={20} />
+      title: "DSA & Problem Solving",
+      desc: "Strong analytical foundation in Data Structures & Algorithms, allowing for efficient coding and algorithmic logic.",
+      icon: <CheckCircle className="text-blue-500" size={20} />
+    },
+    {
+      title: "Scalable Backend Systems",
+      desc: "Passionate about building secure, role-based, and highly concurrent server architectures that scale with user demand.",
+      icon: <GraduationCap className="text-purple-500" size={20} />
     }
   ];
 
@@ -72,10 +72,13 @@ const About = () => {
           <div className="lg:col-span-7 space-y-6 text-left font-sans">
             <div className="space-y-3">
               <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white leading-snug">
-                Aspiring Full Stack Engineer & Software Developer
+                Passionate Full Stack Java Developer & Software Engineer
               </h3>
               <p className="text-xs sm:text-sm font-light text-slate-500 dark:text-slate-400 leading-relaxed">
-                I am a Final-year Computer Science and Engineering student at Karpagam Institute of Technology, Coimbatore. I focus on developing modular backend architectures, building database-driven applications, and developing user-friendly frontends. I possess a strong problem-solving mindset and a passion for engineering highly robust software systems.
+                I am a final-year Computer Science and Engineering student at Karpagam Institute of Technology. I specialize in the Java ecosystem (Spring Boot, Hibernate) and building responsive, user-centric web applications with React.
+              </p>
+              <p className="text-xs sm:text-sm font-light text-slate-500 dark:text-slate-400 leading-relaxed">
+                My engineering focus is centered on designing secure, high-throughput REST APIs, writing clean Object-Oriented code, and performing database query optimization. Combining strong analytical problem-solving with Data Structures & Algorithms (DSA), I strive to create backend systems that are both performant and scalable.
               </p>
             </div>
 

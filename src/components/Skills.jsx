@@ -230,11 +230,11 @@ const Skills = () => {
       ]
     },
     {
-      name: "Core Subjects",
+      name: "Core Concepts",
       skills: [
         {
-          name: "Data Structures & Algorithms",
-          categoryLabel: "Core Subject",
+          name: "DSA",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-purple-500/12 hover:border-purple-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-purple-500">
@@ -247,8 +247,8 @@ const Skills = () => {
           )
         },
         {
-          name: "Object Oriented Programming",
-          categoryLabel: "Core Subject",
+          name: "OOP",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-blue-500/12 hover:border-blue-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-blue-500">
@@ -262,7 +262,7 @@ const Skills = () => {
         },
         {
           name: "REST APIs",
-          categoryLabel: "Core Subject",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-purple-500/12 hover:border-purple-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-purple-500">
@@ -274,7 +274,7 @@ const Skills = () => {
         },
         {
           name: "DBMS",
-          categoryLabel: "Core Subject",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-blue-500/12 hover:border-blue-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-blue-500">
@@ -286,7 +286,7 @@ const Skills = () => {
         },
         {
           name: "Operating Systems",
-          categoryLabel: "Core Subject",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-purple-500/12 hover:border-purple-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-purple-500">
@@ -299,7 +299,7 @@ const Skills = () => {
         },
         {
           name: "Computer Networks",
-          categoryLabel: "Core Subject",
+          categoryLabel: "Core Concept",
           color: "hover:shadow-blue-500/12 hover:border-blue-500/30",
           icon: (
             <svg viewBox="0 0 100 100" className="w-8 h-8 text-blue-500">

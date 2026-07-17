@@ -75,7 +75,7 @@ const Resume = () => {
                 Kruthick M
               </h3>
               <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1">
-                Full Stack Developer | Java Developer | AI Enthusiast
+                Full Stack Java Developer
               </p>
               
               {/* Contact Grid */}

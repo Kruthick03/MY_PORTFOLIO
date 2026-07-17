@@ -23,6 +23,7 @@ const App = () => {
   });
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Set Theme on load and persist
   useEffect(() => {
@@ -49,6 +50,14 @@ const App = () => {
   // Scroll spy to highlight active section and show scroll-to-top button
   useEffect(() => {
     const handleScroll = () => {
+      // Calculate scroll progress
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        setScrollProgress(window.scrollY / totalScroll);
+      } else {
+        setScrollProgress(0);
+      }
+
       // Show/hide scroll to top button
       if (window.scrollY > 400) {
         setShowScrollTop(true);
@@ -91,6 +100,12 @@ const App = () => {
       transition={{ duration: 0.5 }}
       className="relative min-h-screen dot-grid overflow-x-hidden bg-[#f8fafc] text-slate-800 dark:bg-[#0b1120] dark:text-slate-100 transition-colors duration-300"
     >
+      {/* 0. Scroll Progress Bar */}
+      <div 
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#2563EB] to-[#7C3AED] z-50 origin-left"
+        style={{ transform: `scaleX(${scrollProgress})`, transformOrigin: 'left' }}
+      />
+
       {/* 1. Interactive Aurora Mesh + Canvas Particles Background */}
       <BackgroundEffects theme={theme} />
 

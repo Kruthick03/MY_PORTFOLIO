@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ChevronDown, ChevronUp, Cpu, Server, Database, CheckSquare, Search } from 'lucide-react';
+import { Github, ChevronDown, ChevronUp, Cpu, Server, Database, CheckSquare, Search, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -11,13 +11,16 @@ const Projects = () => {
       desc: "Built a secure, role-based (RBAC) full-stack platform that reduced unauthorized access vulnerabilities for 500+ daily active users.",
       problem: "Traditional classroom check-ins are prone to verification delays, security vulnerabilities, and database desynchronization under high load.",
       features: [
-        "Role-based access control (RBAC) secure portal for 500+ daily active users.",
-        "Optimized PostgreSQL retrieval by 30% with composite indexing on logs via Hibernate/JPA.",
-        "Asynchronous RESTful endpoints built to handle concurrent request bursts."
+        "Secure role-based access control (RBAC) authentication model for 500+ users.",
+        "Relational entity mappings and transaction control managed via Hibernate/JPA.",
+        "Optimized database performance by 30% via PostgreSQL composite indexing.",
+        "Asynchronous RESTful endpoint controllers built using Java & Spring Boot.",
+        "Highly secure, modular full stack system architecture."
       ],
       architecture: "Java Spring Boot serves asynchronous REST API endpoints, writing and updating attendance records via Hibernate/JPA in a PostgreSQL database with composite indexing.",
       tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
       github: "https://github.com/kruthick-m",
+      demo: "https://github.com/kruthick-m",
       thumbnail: (
         <svg viewBox="0 0 400 220" className="w-full h-full bg-gradient-to-tr from-slate-900 via-[#131b2e] to-blue-950/40">
           <rect x="20" y="20" width="360" height="180" rx="10" fill="none" stroke="rgba(37, 99, 235, 0.2)" strokeWidth="1" />
@@ -48,13 +51,15 @@ const Projects = () => {
       desc: "Developed a location-aware platform optimizing proximity-based search latency by 25% and reducing response payload size by 35%.",
       problem: "During medical emergencies, users lose precious time visiting physical pharmacies to check for critical prescription drugs.",
       features: [
-        "Location-aware search with proximity latency optimized by 25% via geospatial queries.",
-        "ACID-compliant inventory transactions via Hibernate/JPA ensuring 100% data integrity.",
-        "Server-side pagination and response compression reducing payload size by 35%."
+        "Geospatial query optimization for location-aware medicine searches.",
+        "ACID-compliant inventory transactions and stock mappings via Hibernate/JPA.",
+        "API optimization using server-side pagination and response compression.",
+        "Responsive React frontend tracking medicine availabilities."
       ],
       architecture: "React interface queries Spring Boot controllers. The backend optimizes query execution with geospatial analysis and compresses response payloads before sending.",
       tech: ["Spring Boot", "React", "PostgreSQL"],
       github: "https://github.com/kruthick-m",
+      demo: "https://github.com/kruthick-m",
       thumbnail: (
         <svg viewBox="0 0 400 220" className="w-full h-full bg-gradient-to-tr from-slate-900 via-[#131b2e] to-purple-950/40">
           <circle cx="200" cy="110" r="60" fill="rgba(124, 92, 237, 0.03)" stroke="rgba(124, 58, 237, 0.15)" strokeWidth="1" />
@@ -199,13 +204,22 @@ const Projects = () => {
 
                     <div className="flex items-center space-x-3 pt-2">
                       <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-1.5 text-xs font-semibold px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-550 text-white transition-all duration-200 shadow-md shadow-blue-500/10 active:scale-95"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Live Demo</span>
+                      </a>
+                      <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-1.5 text-xs font-semibold px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors border border-slate-200 dark:border-slate-750"
+                        className="flex items-center space-x-1.5 text-xs font-semibold px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-350 transition-colors border border-slate-200 dark:border-slate-750"
                       >
                         <Github size={14} />
-                        <span>Code</span>
+                        <span>GitHub</span>
                       </a>
                     </div>
                   </div>
