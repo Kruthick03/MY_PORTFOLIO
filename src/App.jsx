@@ -24,6 +24,10 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [is404, setIs404] = useState(() => {
+    const path = window.location.pathname;
+    return path !== '/' && path !== '' && path !== '/index.html';
+  });
 
   // Set Theme on load and persist
   useEffect(() => {
@@ -49,6 +53,8 @@ const App = () => {
 
   // Scroll spy to highlight active section and show scroll-to-top button
   useEffect(() => {
+    if (is404) return;
+
     const handleScroll = () => {
       // Calculate scroll progress
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -84,7 +90,7 @@ const App = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [is404]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -92,6 +98,32 @@ const App = () => {
       behavior: 'smooth'
     });
   };
+
+  if (is404) {
+    return (
+      <div className="relative min-h-screen flex items-center justify-center bg-[#0b1120] text-slate-100 font-sans p-6 overflow-hidden">
+        <BackgroundEffects theme="dark" />
+        <div className="relative z-10 glass-card p-10 max-w-lg text-center rounded-3xl border border-white/5 shadow-2xl flex flex-col items-center gap-6">
+          <h1 className="text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">404</h1>
+          <h2 className="text-2xl font-bold">Page Not Found</h2>
+          <p className="text-sm font-light text-slate-400">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          </p>
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              setIs404(false);
+              window.history.pushState({}, '', '/');
+            }}
+            className="px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-200 active:scale-95 shadow-md shadow-blue-500/10"
+          >
+            Go Back Home
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
