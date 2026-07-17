@@ -11,11 +11,12 @@ const Projects = () => {
       desc: "Built a secure, role-based (RBAC) full-stack platform that reduced unauthorized access vulnerabilities for 500+ daily active users.",
       problem: "Traditional classroom check-ins are prone to verification delays, security vulnerabilities, and database desynchronization under high load.",
       features: [
-        "Secure role-based access control (RBAC) authentication model for 500+ users.",
-        "Relational entity mappings and transaction control managed via Hibernate/JPA.",
-        "Optimized database performance by 30% via PostgreSQL composite indexing.",
-        "Asynchronous RESTful endpoint controllers built using Java & Spring Boot.",
-        "Highly secure, modular full stack system architecture."
+        "RBAC Authentication",
+        "Hibernate/JPA",
+        "REST APIs",
+        "Composite Indexing",
+        "500+ Daily Users",
+        "Optimized Database"
       ],
       architecture: "Java Spring Boot serves asynchronous REST API endpoints, writing and updating attendance records via Hibernate/JPA in a PostgreSQL database with composite indexing.",
       tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
@@ -51,10 +52,12 @@ const Projects = () => {
       desc: "Developed a location-aware platform optimizing proximity-based search latency by 25% and reducing response payload size by 35%.",
       problem: "During medical emergencies, users lose precious time visiting physical pharmacies to check for critical prescription drugs.",
       features: [
-        "Geospatial query optimization for location-aware medicine searches.",
-        "ACID-compliant inventory transactions and stock mappings via Hibernate/JPA.",
-        "API optimization using server-side pagination and response compression.",
-        "Responsive React frontend tracking medicine availabilities."
+        "Location-aware medicine search",
+        "Hibernate/JPA",
+        "Inventory Management",
+        "Pagination",
+        "Response Compression",
+        "Optimized API Performance"
       ],
       architecture: "React interface queries Spring Boot controllers. The backend optimizes query execution with geospatial analysis and compresses response payloads before sending.",
       tech: ["Spring Boot", "React", "PostgreSQL"],

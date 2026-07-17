@@ -5,13 +5,13 @@ import { ShieldCheck, Cloud, Cpu, Award, Layers } from 'lucide-react';
 const Certifications = () => {
   const certifications = [
     {
-      title: "Microsoft Certified: Azure Fundamentals",
+      title: "Microsoft Certified Azure Fundamentals",
       issuer: "Microsoft",
       icon: <Cloud className="text-blue-500" size={22} />,
       color: "hover:shadow-blue-500/10 hover:border-blue-500/20"
     },
     {
-      title: "AWS Academy Graduate – Cloud Foundations",
+      title: "AWS Academy Cloud Foundations",
       issuer: "AWS Academy",
       icon: <Cpu className="text-purple-500" size={22} />,
       color: "hover:shadow-purple-500/10 hover:border-purple-500/20"

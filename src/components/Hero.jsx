@@ -64,6 +64,13 @@ const Hero = () => {
     }
   };
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Kruthick_M_Resume.pdf';
+    link.download = 'Kruthick_M_Resume.pdf';
+    link.click();
+  };
+
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-20 overflow-hidden font-sans">
       
@@ -103,7 +110,7 @@ const Hero = () => {
             {/* Subtitle / Description */}
             <div className="text-sm sm:text-base text-slate-500 dark:text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
               <p>
-                Final-year Computer Science and Engineering student specializing in Java, Spring Boot, React, PostgreSQL, and scalable backend development.
+                Final-year Computer Science and Engineering student specializing in Java, Spring Boot, React, PostgreSQL, SQL, REST APIs and scalable backend development.
               </p>
             </div>
           </motion.div>
@@ -124,19 +131,19 @@ const Hero = () => {
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
             </button>
 
-            {/* Secondary: View Resume */}
+            {/* Secondary: Download Resume */}
             <button
-              onClick={() => handleScroll('resume')}
+              onClick={handleDownloadResume}
               className="flex items-center space-x-2 w-full sm:w-auto justify-center px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl border border-slate-200 dark:border-slate-700 active:scale-98 transition-all duration-250"
             >
               <FileText size={14} />
-              <span>View Resume</span>
+              <span>Download Resume</span>
             </button>
 
             {/* Outline: Contact Me */}
             <button
               onClick={() => handleScroll('contact')}
-              className="flex items-center space-x-2 w-full sm:w-auto justify-center px-6 py-3 text-sm font-semibold text-slate-750 dark:text-slate-300 hover:text-blue-500 dark:hover:text-white bg-transparent hover:bg-slate-50 dark:hover:bg-slate-850 rounded-xl border border-slate-200 dark:border-slate-800 active:scale-98 transition-all duration-250"
+              className="flex items-center space-x-2 w-full sm:w-auto justify-center px-6 py-3 text-sm font-semibold text-slate-755 dark:text-slate-300 hover:text-blue-500 dark:hover:text-white bg-transparent hover:bg-slate-50 dark:hover:bg-slate-850 rounded-xl border border-slate-200 dark:border-slate-800 active:scale-98 transition-all duration-250"
             >
               <Mail size={14} />
               <span>Contact Me</span>

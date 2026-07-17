@@ -233,7 +233,7 @@ const Skills = () => {
       name: "Core Concepts",
       skills: [
         {
-          name: "DSA",
+          name: "Data Structures & Algorithms",
           categoryLabel: "Core Concept",
           color: "hover:shadow-purple-500/12 hover:border-purple-500/30",
           icon: (
