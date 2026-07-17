@@ -127,11 +127,11 @@ const Resume = () => {
                   <div className="space-y-2.5">
                     <div>
                       <span className="font-semibold text-slate-800 dark:text-white">Languages:</span>
-                      <p className="text-slate-600 dark:text-slate-400 font-light mt-0.5">Java, C++, Python, JavaScript, SQL, HTML, CSS</p>
+                      <p className="text-slate-600 dark:text-slate-400 font-light mt-0.5">Java, C++, Python, SQL, JavaScript, HTML, CSS</p>
                     </div>
                     <div>
                       <span className="font-semibold text-slate-800 dark:text-white">Frameworks:</span>
-                      <p className="text-slate-600 dark:text-slate-400 font-light mt-0.5">Spring Boot, React</p>
+                      <p className="text-slate-600 dark:text-slate-400 font-light mt-0.5">Spring Boot, React, Hibernate</p>
                     </div>
                     <div>
                       <span className="font-semibold text-slate-800 dark:text-white">Databases:</span>
@@ -149,8 +149,8 @@ const Resume = () => {
                     Certifications
                   </h4>
                   <div className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400 font-light">
-                    <p>• Microsoft Azure Fundamentals</p>
-                    <p>• AWS Academy Cloud Foundations</p>
+                    <p>• Microsoft Certified: Azure Fundamentals</p>
+                    <p>• AWS Academy Graduate – Cloud Foundations</p>
                     <p>• IBM Enterprise Design Thinking Practitioner</p>
                     <p>• Celonis Foundations Certificate</p>
                   </div>
@@ -167,21 +167,21 @@ const Resume = () => {
                     <div>
                       <div className="flex justify-between items-start">
                         <h5 className="font-bold text-slate-800 dark:text-white">Web Development Intern</h5>
-                        <span className="text-[10px] font-mono text-slate-500 mt-0.5">June 2025 - August 2025</span>
+                        <span className="text-[10px] font-mono text-slate-500 mt-0.5">Aug 2024</span>
                       </div>
                       <p className="text-xs font-semibold text-slate-500 dark:text-blue-400 mb-1">Crescent Info Tech</p>
                       <p className="text-slate-650 dark:text-slate-400 font-light leading-relaxed">
-                        Developed responsive web applications using HTML, SQL, and MongoDB. Optimized backend workflows and designed database queries.
+                        Developed responsive web applications using HTML, SQL, and MongoDB. Optimized backend workflows and database connection pooling to improve performance. Designed efficient database queries for faster data retrieval in high-traffic endpoints.
                       </p>
                     </div>
                     <div>
                       <div className="flex justify-between items-start">
                         <h5 className="font-bold text-slate-800 dark:text-white">UI/UX Design Intern</h5>
-                        <span className="text-[10px] font-mono text-slate-500 mt-0.5">January 2025 - March 2025</span>
+                        <span className="text-[10px] font-mono text-slate-500 mt-0.5">May 2025 – Jun 2025</span>
                       </div>
                       <p className="text-xs font-semibold text-slate-500 dark:text-blue-400 mb-1">Crescent Info Tech</p>
                       <p className="text-slate-650 dark:text-slate-400 font-light leading-relaxed">
-                        Designed responsive wireframes, optimized screen components for enhanced user experience, and collaborated directly with dev teams.
+                        Designed responsive wireframes and functional user interfaces following UI/UX principles. Conducted usability testing to identify friction points and improve user engagement. Collaborated with developers to ensure seamless translation of design systems into code.
                       </p>
                     </div>
                   </div>
@@ -195,13 +195,13 @@ const Resume = () => {
                     <div>
                       <h5 className="font-bold text-slate-800 dark:text-white">Attendance Management System</h5>
                       <p className="text-slate-650 dark:text-slate-400 font-light leading-relaxed mt-0.5">
-                        Developed a full-stack attendance management system for students and faculty. Designed REST APIs using Spring Boot. Built a responsive React dashboard. Integrated PostgreSQL for attendance management.
+                        Built secure, role-based (RBAC) full-stack platform; reduced unauthorized access vulnerabilities for 500+ daily active users. Optimized PostgreSQL data retrieval time by 30% by implementing composite indexing on attendance logs via Hibernate/JPA. Architected asynchronous RESTful endpoints to ensure system throughput during concurrent request bursts.
                       </p>
                     </div>
                     <div>
                       <h5 className="font-bold text-slate-800 dark:text-white">Medifind – Medicine Availability Finder</h5>
                       <p className="text-slate-650 dark:text-slate-400 font-light leading-relaxed mt-0.5">
-                        Developed a medicine availability platform. Built REST APIs for medicine search. Developed React frontend. Integrated PostgreSQL database.
+                        Developed location-aware service; optimized proximity-based search latency by 25% using geospatial query optimization. Engineered ACID-compliant inventory transactions using Hibernate/JPA, ensuring 100% data integrity during multi-vendor stock updates. Optimized API throughput by implementing server-side pagination and response compression, reducing payload size by 35%.
                       </p>
                     </div>
                   </div>

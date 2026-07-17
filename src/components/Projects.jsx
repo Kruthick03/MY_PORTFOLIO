@@ -8,14 +8,14 @@ const Projects = () => {
   const projects = [
     {
       title: "Attendance Management System",
-      desc: "Developed a full-stack attendance management system for students and faculty featuring dynamic REST controllers and tracking indices.",
-      problem: "Traditional classroom check-ins are prone to verification delays, database desynchronizations, and loss of physical records.",
+      desc: "Built a secure, role-based (RBAC) full-stack platform that reduced unauthorized access vulnerabilities for 500+ daily active users.",
+      problem: "Traditional classroom check-ins are prone to verification delays, security vulnerabilities, and database desynchronization under high load.",
       features: [
-        "Multi-role dashboards for students and faculty.",
-        "REST APIs built with Java & Spring Boot.",
-        "Relational entity management using PostgreSQL."
+        "Role-based access control (RBAC) secure portal for 500+ daily active users.",
+        "Optimized PostgreSQL retrieval by 30% with composite indexing on logs via Hibernate/JPA.",
+        "Asynchronous RESTful endpoints built to handle concurrent request bursts."
       ],
-      architecture: "Java Spring Boot serves REST API endpoints, writing and updating attendance indices in a PostgreSQL database accessed via Spring Data JPA.",
+      architecture: "Java Spring Boot serves asynchronous REST API endpoints, writing and updating attendance records via Hibernate/JPA in a PostgreSQL database with composite indexing.",
       tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
       github: "https://github.com/kruthick-m",
       thumbnail: (
@@ -45,14 +45,14 @@ const Projects = () => {
     },
     {
       title: "Medifind – Medicine Availability Finder",
-      desc: "A search platform that helps users instantly check stock levels and find medicine availabilities in neighboring health hubs.",
+      desc: "Developed a location-aware platform optimizing proximity-based search latency by 25% and reducing response payload size by 35%.",
       problem: "During medical emergencies, users lose precious time visiting physical pharmacies to check for critical prescription drugs.",
       features: [
-        "Fast index search queries on medicine names.",
-        "PostgreSQL schema optimized for stock records.",
-        "React frontend for real-time responsiveness."
+        "Location-aware search with proximity latency optimized by 25% via geospatial queries.",
+        "ACID-compliant inventory transactions via Hibernate/JPA ensuring 100% data integrity.",
+        "Server-side pagination and response compression reducing payload size by 35%."
       ],
-      architecture: "React interface makes API calls to Spring Boot controllers that query and retrieve active inventory from a PostgreSQL instance.",
+      architecture: "React interface queries Spring Boot controllers. The backend optimizes query execution with geospatial analysis and compresses response payloads before sending.",
       tech: ["Spring Boot", "React", "PostgreSQL"],
       github: "https://github.com/kruthick-m",
       thumbnail: (

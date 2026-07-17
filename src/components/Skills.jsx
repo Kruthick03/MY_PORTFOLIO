@@ -114,6 +114,17 @@ const Skills = () => {
               <ellipse cx="50" cy="50" rx="38" ry="14" fill="none" stroke="currentColor" strokeWidth="2.5" transform="rotate(150 50 50)" />
             </svg>
           )
+        },
+        {
+          name: "Hibernate",
+          categoryLabel: "Framework",
+          color: "hover:shadow-amber-500/12 hover:border-amber-500/30",
+          icon: (
+            <svg viewBox="0 0 100 100" className="w-8 h-8 text-amber-500">
+              <path d="M20 25 L35 25 L35 75 L20 75 Z M65 25 L80 25 L80 75 L65 75 Z" fill="none" stroke="currentColor" strokeWidth="4" />
+              <path d="M35 50 L65 50" fill="none" stroke="currentColor" strokeWidth="4" />
+            </svg>
+          )
         }
       ]
     },

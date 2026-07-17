@@ -7,24 +7,24 @@ const Experience = () => {
     {
       role: "Web Development Intern",
       company: "Crescent Info Tech",
-      duration: "June 2025 - August 2025",
+      duration: "Aug 2024",
       location: "Coimbatore, India",
       desc: [
         "Developed responsive web applications using HTML, SQL, and MongoDB.",
-        "Optimized backend workflows.",
-        "Designed database queries."
+        "Optimized backend workflows and database connection pooling to improve performance.",
+        "Designed efficient database queries for faster data retrieval in high-traffic endpoints."
       ],
-      tech: ["HTML5", "SQL", "MongoDB", "JavaScript"]
+      tech: ["HTML", "SQL", "MongoDB", "JavaScript"]
     },
     {
       role: "UI/UX Design Intern",
       company: "Crescent Info Tech",
-      duration: "January 2025 - March 2025",
+      duration: "May 2025 – Jun 2025",
       location: "Coimbatore, India",
       desc: [
-        "Designed responsive wireframes.",
-        "Improved user experience.",
-        "Collaborated with developers."
+        "Designed responsive wireframes and functional user interfaces following UI/UX principles.",
+        "Conducted usability testing to identify friction points and improve user engagement.",
+        "Collaborated with developers to ensure seamless translation of design systems into code."
       ],
       tech: ["Figma", "Wireframing", "User Experience", "Collaborative Design"]
     }
