@@ -10,10 +10,9 @@ const Experience = () => {
       duration: "Aug 2024",
       location: "Coimbatore, India",
       desc: [
-        "Developed responsive web applications using HTML, SQL and MongoDB.",
-        "Optimized backend workflows.",
-        "Improved database performance.",
-        "Designed efficient SQL queries."
+        "Developed responsive web applications using HTML, SQL, and MongoDB.",
+        "Optimized backend workflows and database connection pooling to improve performance.",
+        "Designed efficient database queries for faster data retrieval in high-traffic endpoints."
       ],
       tech: ["HTML", "SQL", "MongoDB", "JavaScript"]
     },
@@ -23,9 +22,9 @@ const Experience = () => {
       duration: "May 2025 – Jun 2025",
       location: "Coimbatore, India",
       desc: [
-        "Designed responsive wireframes.",
-        "Conducted usability testing.",
-        "Collaborated with developers."
+        "Designed responsive wireframes and functional user interfaces following UI/UX principles.",
+        "Conducted usability testing to identify friction points and improve user engagement.",
+        "Collaborated with developers to ensure seamless translation of design systems into code."
       ],
       tech: ["Figma", "Wireframing", "User Experience", "Collaborative Design"]
     }

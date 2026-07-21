@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex items-center space-x-4">
           <a
-            href="https://github.com/kruthick-m"
+            href="https://github.com/Kruthick03"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-slate-900 dark:text-slate-450 dark:hover:text-white transition-colors"
@@ -28,7 +28,7 @@ const Footer = () => {
             <Github size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/kruthick-m"
+            href="https://www.linkedin.com/in/kruthick-m-15767028a"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-slate-900 dark:text-slate-450 dark:hover:text-white transition-colors"

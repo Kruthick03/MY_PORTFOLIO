@@ -11,17 +11,17 @@ const Projects = () => {
       desc: "Built a secure, role-based (RBAC) full-stack platform that reduced unauthorized access vulnerabilities for 500+ daily active users.",
       problem: "Traditional classroom check-ins are prone to verification delays, security vulnerabilities, and database desynchronization under high load.",
       features: [
-        "RBAC Authentication",
-        "Hibernate/JPA",
-        "REST APIs",
-        "Composite Indexing",
-        "500+ Daily Users",
-        "Optimized Database"
+        "RBAC Security Architecture",
+        "30% Query Optimization",
+        "Hibernate/JPA Integration",
+        "Asynchronous RESTful Endpoints",
+        "PostgreSQL Composite Indexing",
+        "500+ Daily Active Users"
       ],
-      architecture: "Java Spring Boot serves asynchronous REST API endpoints, writing and updating attendance records via Hibernate/JPA in a PostgreSQL database with composite indexing.",
+      architecture: "Java Spring Boot serves asynchronous REST API endpoints, processing attendance logs via Hibernate/JPA onto a PostgreSQL database with composite indexing (achieving a 30% reduction in retrieval time) to handle high-concurrency request bursts.",
       tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
-      github: "https://github.com/kruthick-m",
-      demo: "https://github.com/kruthick-m",
+      github: "https://github.com/Kruthick03",
+      demo: "https://github.com/Kruthick03",
       thumbnail: (
         <svg viewBox="0 0 400 220" className="w-full h-full bg-gradient-to-tr from-slate-900 via-[#131b2e] to-blue-950/40">
           <rect x="20" y="20" width="360" height="180" rx="10" fill="none" stroke="rgba(37, 99, 235, 0.2)" strokeWidth="1" />
@@ -50,19 +50,19 @@ const Projects = () => {
     {
       title: "Medifind – Medicine Availability Finder",
       desc: "Developed a location-aware platform optimizing proximity-based search latency by 25% and reducing response payload size by 35%.",
-      problem: "During medical emergencies, users lose precious time visiting physical pharmacies to check for critical prescription drugs.",
+      problem: "During medical emergencies, users lose precious time searching physical pharmacies for critical prescription drug availability.",
       features: [
-        "Location-aware medicine search",
-        "Hibernate/JPA",
-        "Inventory Management",
-        "Pagination",
-        "Response Compression",
-        "Optimized API Performance"
+        "Geospatial Query Optimization",
+        "25% Reduced Search Latency",
+        "ACID-Compliant Transactions",
+        "Multi-Vendor Stock Updates",
+        "Server-Side Pagination",
+        "35% Response Compression"
       ],
-      architecture: "React interface queries Spring Boot controllers. The backend optimizes query execution with geospatial analysis and compresses response payloads before sending.",
+      architecture: "React interface queries Spring Boot REST endpoints. The service utilizes geospatial query optimizations for 25% faster search latency, Hibernate/JPA ACID transactions for 100% data integrity during multi-vendor inventory updates, and response compression/pagination to cut payload size by 35%.",
       tech: ["Spring Boot", "React", "PostgreSQL"],
-      github: "https://github.com/kruthick-m",
-      demo: "https://github.com/kruthick-m",
+      github: "https://github.com/Kruthick03",
+      demo: "https://github.com/Kruthick03",
       thumbnail: (
         <svg viewBox="0 0 400 220" className="w-full h-full bg-gradient-to-tr from-slate-900 via-[#131b2e] to-purple-950/40">
           <circle cx="200" cy="110" r="60" fill="rgba(124, 92, 237, 0.03)" stroke="rgba(124, 58, 237, 0.15)" strokeWidth="1" />

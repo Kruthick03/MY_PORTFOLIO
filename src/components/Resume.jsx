@@ -27,7 +27,7 @@ const Resume = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={handleDownload}
             className="flex items-center space-x-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-550 rounded-xl transition-all duration-200 shadow-md shadow-blue-500/10 active:scale-95"
@@ -44,27 +44,6 @@ const Resume = () => {
             <span>Open Resume</span>
           </button>
         </div>
-
-        {/* Live Resume Preview Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="glass-card w-full max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl"
-        >
-          <iframe
-            src="/Kruthick_M_Resume.pdf"
-            width="100%"
-            height="900"
-            style={{
-              border: "none",
-              borderRadius: "16px",
-              background: "white"
-            }}
-            title="Resume"
-          />
-        </motion.div>
 
       </div>
     </section>
